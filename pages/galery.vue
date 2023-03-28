@@ -8,11 +8,27 @@
               <path d="M11 2L3 11.1042L11 21" stroke="#320B4E" stroke-width="4" stroke-linecap="round" />
             </svg>
           </router-link>
-          <h1 class="font-bold text-2xl mx-auto" style="color:rgba(50, 11, 78, 1);">
+          <h1 v-if="!searchShown" class="font-bold text-2xl mx-auto" style="color:rgba(50, 11, 78, 1);">
             Galeri
           </h1>
+          <div @click="showSearch">
+            <div class="absolute right-1/3">
+              <img src="/frame.png">
+            </div>
+          </div>
+          <div v-if="searchShown">
+            <div class="relative mb-4 flex flex-row justify-between px-4 ">
+              <input
+                type="search"
+                class="relative m-5-mr-4 w-[5%] px-44 py-1 pt-2 flex-auto rounded-full border border-solid border-black bg-transparent bg-clip-padding text-base font-normal outline-none transition duration-300 ease-in-out focus:border-primary focus:shadow-te-primary focus:outline dark:placeholder-black"
+                placeholder="Cari replay"
+                aria-label="Search"
+                aria-describedby="button-addon2"
+              >
+            </div>
+          </div>
         </div>
-        <div class="px-10 py-4">
+        <div class="px-10 py-4 cursor-pointer">
           <div v-for="(galeri, index) in album" :key="index" class="w-full relative mb-8" @click="showModal = true">
             <div class="relativ">
               <div class="absolute rounded-lg w-full h-full bg-gradient-to-t from-purple-800" />
@@ -40,109 +56,25 @@
       <div class="fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-50 duration-300" @click="showModal = false" />
       <div class="w-full max-w-screen-sm bg-white max-h-screen overflow-y-scroll" style="z-index: 1;">
         <div>
-          <div class="container">
-            <div class="mb-4 flex flex-row py-5 px-4 rounded-t-xl shadow-lg" style="background-color:rgba(50, 11, 78, 1)">
+          <div class="container ">
+            <div class=" w-full flex flex-row py-5 rounded-t-xl shadow-lg" style="background-color:rgba(50, 11, 78, 1)">
               <h1 class="font-bold text-2xl mx-auto" style="color:rgba(255, 255, 255, 1)">
-                Foto(248)
+                Foto(24)
               </h1>
             </div>
           </div>
         </div>
-        <div class="container">
+        <div>
           <div>
-            <div class="container mx-auto px-5 py-2">
-              <div class="-m-1 flex flex-wrap">
-                <div class="flex w-1/3 flex-wrap">
-                  <div class="w-full p-1">
-                    <img src="/gmbr2.jpg" alt="">
-                  </div>
-                </div>
-                <div class="flex w-1/3 flex-wrap">
-                  <div class="w-full p-1">
-                    <img src="/gmbr33.png" alt="">
-                  </div>
-                </div>
-                <div class="flex w-1/3 flex-wrap">
-                  <div class="w-full p-1">
-                    <img src="/gmbr4.jpg" alt="">
-                  </div>
-                </div>
-                <div class="flex w-1/3 flex-wrap">
-                  <div class="w-full p-1">
-                    <img src="/gmbr33.png" alt="">
-                  </div>
-                </div>
-                <div class="flex w-1/3 flex-wrap">
-                  <div class="w-full p-1">
-                    <img src="/gmbr4.jpg" alt="">
-                  </div>
-                </div>
-                <div class="flex w-1/3 flex-wrap">
-                  <div class="w-full p-1">
-                    <img src="/gmbr2.jpg" alt="">
-                  </div>
-                </div>
-                <div class="flex w-1/3 flex-wrap">
-                  <div class="w-full p-1">
-                    <img src="/gmbr4.jpg" alt="">
-                  </div>
-                </div>
-                <div class="flex w-1/3 flex-wrap">
-                  <div class="w-full p-1">
-                    <img src="/gmbr2.jpg" alt="">
-                  </div>
-                </div>
-                <div class="flex w-1/3 flex-wrap">
-                  <div class="w-full p-1">
-                    <img src="/gmbr33.png" alt="">
-                  </div>
-                </div>
-                <div class="flex w-1/3 flex-wrap">
-                  <div class="w-full p-1">
-                    <img src="/gmbr33.png" alt="">
-                  </div>
-                </div>
-                <div class="flex w-1/3 flex-wrap">
-                  <div class="w-full p-1">
-                    <img src="/img1.jpg" alt="">
-                  </div>
-                </div>
-                <div class="flex w-1/3 flex-wrap">
-                  <div class="w-full p-1">
-                    <img src="/gmbr2.jpg" alt="">
-                  </div>
-                </div>
-                <div class="flex w-1/3 flex-wrap">
-                  <div class="w-full p-1">
-                    <img src="/gmbr2.jpg" alt="">
-                  </div>
-                </div>
-                <div class="flex w-1/3 flex-wrap">
-                  <div class="w-full p-1">
-                    <img src="/gmbr4.jpg" alt="">
-                  </div>
-                </div>
-                <div class="flex w-1/3 flex-wrap">
-                  <div class="w-full p-1">
-                    <img src="/gmbr2.jpg" alt="">
-                  </div>
-                </div>
-                <div class="flex w-1/3 flex-wrap">
-                  <div class="w-full p-1">
-                    <img src="/gmbr33.jpg" alt="">
-                  </div>
-                </div>
-                <div class="flex w-1/3 flex-wrap">
-                  <div class="w-full p-1">
-                    <img src="/img1.jpg" alt="">
-                  </div>
-                </div>
-                <div class="flex w-1/3 flex-wrap">
-                  <div class="w-full p-1">
-                    <img src="/gmbr4.jpg" alt="">
-                  </div>
-                </div>
-              </div>
+            <div class="grid grid-cols-3 p-1 gap-2">
+              <gallery :images="images" :index="index" @close="index = null" />
+              <div
+                v-for="(image, imageIndex) in images"
+                :key="imageIndex"
+                class="image"
+                :style="{ backgroundImage: 'url(' + image + ')', width: '200px', height: '100px' }"
+                @click="index = imageIndex"
+              />
             </div>
           </div>
         </div>
@@ -152,31 +84,77 @@
 </template>
 
 <script>
+import VueGallery from 'vue-gallery'
 export default {
+  components: {
+    gallery: VueGallery
+  },
   data () {
     return {
+      searchShown: false,
       showModal: false,
       album: [
         {
           judul: 'Persik kediri VS Dewa United',
           tanggal: '9 februari 2023',
-          jumlahfoto: 248,
+          jumlahfoto: 24,
           bg: 'gfoto.png'
         },
         {
           judul: 'Persik kediri VS Dewa United',
           tanggal: '9 februari 2023',
-          jumlahfoto: 248,
+          jumlahfoto: 24,
           bg: 'gfoto.png'
         },
         {
           judul: 'Persik kediri VS Dewa United',
           tanggal: '9 februari 2023',
-          jumlahfoto: 248,
+          jumlahfoto: 24,
           bg: 'gfoto.png'
         }
-      ]
+      ],
+      images: [
+        'psk1.jpg',
+        'psk2.jpg',
+        'psk3.jpg',
+        'psk4.jpg',
+        'psk5.jpg',
+        'psk6.jpg',
+        'psk7.jpg',
+        'psk8.jpg',
+        'psk9.jpg',
+        'psk10.jpg',
+        'psk11.jpg',
+        'psk12.jpg',
+        'psk13.jpg',
+        'psk14.jpg',
+        'psk15.jpg',
+        'psk16.jpg',
+        'psk17.jpg',
+        'psk18.jpg',
+        'psk19.jpg',
+        'psk20.jpg',
+        'psk21.jpg',
+        'psk22.jpg',
+        'psk23.jpg',
+        'psk24.jpg'
+      ],
+      index: null
+    }
+  },
+  methods: {
+    showSearch () {
+      this.searchShown = !this.searchShown
     }
   }
 }
 </script>
+<style>
+  .image {
+    float: left;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 10px;
+  }
+</style>
