@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div>
     <div v-if="showTiket" class="fixed top-0 left-0 flex justify-center items-end w-screen h-full">
       <div class="fixed top-0 left-0 w-screen h-screen duration-700" @click="$emit('close')" />
@@ -20,19 +20,19 @@
             >
               <rect x="2.12305" y="1.31085" width="294.004" height="169.689" rx="84.8446" />
               <rect x="21.3906" y="17.4717" width="253.601" height="142.962" fill="url(#pattern0)" />
-              <path d="M1.81152 95.7898L30.4038 88.6417C33.8846 146.572 84.4806 150.799 106.236 145.826V168.825C27.9176 178.77 4.19422 123.553 1.81152 95.7898Z" :fill="utama ? colorUtama : colorDefault" stroke="#A9A9A9" stroke-width="0" stroke-linecap="round" />
-              <path d="M296.126 96.722L267.534 89.5739C264.053 147.504 213.457 151.731 191.702 146.759V169.757C270.02 179.702 293.743 124.486 296.126 96.722Z" :fill="utama ? colorUtama : colorDefault" stroke="#A9A9A9" stroke-width="0" stroke-linecap="round" />
+              <path d="M1.81152 95.7898L30.4038 88.6417C33.8846 146.572 84.4806 150.799 106.236 145.826V168.825C27.9176 178.77 4.19422 123.553 1.81152 95.7898Z" :fill="kelas === 'utama' ? colorUtama : colorDefault" stroke="#A9A9A9" stroke-width="0" stroke-linecap="round" />
+              <path d="M296.126 96.722L267.534 89.5739C264.053 147.504 213.457 151.731 191.702 146.759V169.757C270.02 179.702 293.743 124.486 296.126 96.722Z" :fill="kelas === 'utama' ? colorUtama : colorDefault" stroke="#A9A9A9" stroke-width="0" stroke-linecap="round" />
               <rect
                 x="106.547"
                 y="145.515"
                 width="84.5338"
                 height="25.4845"
-                :fill="vip ? colorVip : colorDefault"
+                :fill="kelas === 'vip' ? colorVip : colorDefault"
                 stroke="#A9A9A9"
                 stroke-width="0"
                 stroke-linecap="round"
               />
-              <path d="M1.19012 95.1682L31.0256 88.0201C31.0256 40.7806 66.8696 30.6283 85.1024 30.8355L221.537 31.7678C261.069 36.989 268.259 71.5484 267.534 89.2633L296.126 96.7221C301.099 23.6252 247.643 2.45034 220.294 1H85.7239C13.1243 3.73492 -0.881785 64.9183 1.19012 95.1682Z" :fill="ekonomi ? colorEkonomi : colorDefault" stroke="A9A9A9" stroke-width="0" stroke-linecap="round" />
+              <path d="M1.19012 95.1682L31.0256 88.0201C31.0256 40.7806 66.8696 30.6283 85.1024 30.8355L221.537 31.7678C261.069 36.989 268.259 71.5484 267.534 89.2633L296.126 96.7221C301.099 23.6252 247.643 2.45034 220.294 1H85.7239C13.1243 3.73492 -0.881785 64.9183 1.19012 95.1682Z" :fill="kelas === 'ekonomi' ? colorEkonomi : colorDefault" stroke="A9A9A9" stroke-width="0" stroke-linecap="round" />
               <defs>
                 <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
                   <use xlink:href="#image0_1516_56" transform="matrix(0.00245098 0 0 0.00434783 -0.671569 -2.1)" />
@@ -58,20 +58,20 @@
         </div>
         <div class="flex justify-around cursor-pointer">
           <div class="flex mb-6 text-gray-500">
-            <div class="bg-white px-6 py-2 rounded-lg border-2 border-gray-400 hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out" @click="pilihEkonomi">
+            <div class="bg-white px-6 py-2 rounded-lg border-2 border-gray-400 hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out" @click="kelas = 'ekonomi'">
               <span class="bg-red-500 px-3 rounded-full mr-4" />
               Ekonomi
             </div>
           </div>
           <div class="flex mb-6 text-gray-500">
-            <div class="bg-white px-6 py-2 rounded-lg border-2 border-gray-400 hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out" @click="pilihUtama">
+            <div class="bg-white px-6 py-2 rounded-lg border-2 border-gray-400 hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out" @click="kelas = 'utama'">
               <span class="bg-green-500 px-3 rounded-full mr-4" />
               Utama
             </div>
           </div>
           <div>
             <div class="flex  text-gray-500">
-              <div class="bg-white px-6 py-2 rounded-lg border-2 border-gray-400 hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out" @click="pilihVip">
+              <div class="bg-white px-6 py-2 rounded-lg border-2 border-gray-400 hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out" @click="kelas = 'vip'">
                 <span class="bg-gray-800 px-3 rounded-full mr-4" />
                 VIP
                 <div class="border-t-4" />
@@ -80,9 +80,16 @@
           </div>
         </div>
         <div class="w-full px-8">
-          <div class="bg-gray-400 py-2 px-8 rounded-lg border hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out">
+          <div class="bg-gray-400 py-2 px-8 rounded-lg border hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out" :class="{ 'filter grayscale': !kelas }" style="background-color:rgba(50, 11, 78, 1);">
             <div class=" text-lg font-bold text-white px-12 text-center">
               Masukkan Ke Keranjang
+            </div>
+          </div>
+        </div>
+        <div v-if="showalert" class="fixed top-0 left-0 flex justify-center items-end w-screen h-full">
+          <div class="max-w screen-sm pb-8">
+            <div class="px-5 py rounded-lg bg-white border border-purple-900">
+              Berhasil Masukkan Ke Keranjang
             </div>
           </div>
         </div>
@@ -90,7 +97,7 @@
     </div>
   </div>
 </template>
-<script>
+<!-- <script>
 export default {
   props: {
     showTiket: {
@@ -103,10 +110,12 @@ export default {
       ekonomi: true,
       utama: true,
       vip: true,
+      kelas: null,
       colorEkonomi: '#FF0000',
       colorDefault: '#A9A9A9',
       colorUtama: '#00FF00',
-      colorVip: '#320B4E'
+      colorVip: '#320B4E',
+      showalert: false
     }
   },
   methods: {
@@ -119,7 +128,31 @@ export default {
     },
     pilihVip () {
       this.vip = !this.vip
+    },
+    async masukankeranjang () {
+      // eslint-disable-next-line vue/no-mutating-props
+      this.showTiket = false
+      this.showalert = true
+      try {
+        const payload = {
+          harga: 1,
+          tiket_id: 1,
+          total: 20,
+          tanggal_pembelian: '2023/3/12',
+          Seat: 'EKONOMI',
+          harga_tiket_id: 1
+        }
+        await this.$axios.$post('/api/keranjang', payload, {
+          headers: { 'ngrok-skip-browser-warning': '123123' }
+        })
+          .then((res) => {
+            this.showalert = false
+            console.log('keranjang inputted')
+          })
+      } catch (error) {
+        alert(error.response.data.message)
+      }
     }
   }
 }
-</script>
+</script> -->

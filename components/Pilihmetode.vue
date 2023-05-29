@@ -23,17 +23,17 @@
             <div class="items-center pt-3 pb-3">
               <div class="px-5 cursor-pointer">
                 <div class="flex gap-4">
-                  <div class="border-solid border-2 rounded-lg">
-                    <img src="/DANA.png" alt="">
+                  <div class="border-solid border-2 px-5 py-2 rounded-lg">
+                    <img src="/bank/bi1.png" alt="">
                   </div>
                   <h1 class="text-lg font-semibold" style="color:rgba(68, 68, 68, 1)">
-                    Dana
+                    Bank Republik Indonesia
                   </h1>
                   <div class="absolute right-1/3 mb-[0.125rem] block min-h-[1.5rem] pl-[1.5rem]">
                     <input
                       id="radioDefault01"
                       v-model="methodPay"
-                      value="dana"
+                      :value="{ akun: 'bri', nomor: '123321' }"
                       class="relative h-5 w-5 appearance-none rounded-full border-2 border-solid border-black bg-purple-700 before:pointer-events-none before:absolute before:h-4 before:w-4 before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] after:absolute after:z-[1] after:block after:h-4 after:w-4 after:rounded-full after:bg-white after:content-[''] checked:border-primary checked:bg-purple-900 checked:before:opacity-[0.16] checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:h-[0.625rem] checked:after:w-[0.625rem] checked:after:rounded-full checked:after:border-primary checked:after:bg-primary checked:after:content-[''] checked:after:[transform:translate(-50%,-50%)] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:transition-[border-color_0.2s] focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:border-primary checked:focus:bg-white checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s]"
                       type="radio"
                     >
@@ -45,17 +45,17 @@
             <div class="items-center pt-3 pb-3">
               <div class="px-5 cursor-pointer">
                 <div class="flex gap-4">
-                  <div class="border-solid border-2 rounded-lg">
-                    <img src="/GOPAY.png" alt="">
+                  <div class="border-solid border-2 px-5 py-2 rounded-lg">
+                    <img src="/bank/bca.png" alt="">
                   </div>
                   <h1 class="text-lg font-semibold" style="color:rgba(68, 68, 68, 1)">
-                    Gopay
+                    Bank Centra Asia
                   </h1>
                   <div class=" absolute right-1/3 mb-[0.125rem] block min-h-[1.5rem] pl-[1.5rem]">
                     <input
                       id="radioDefault01"
                       v-model="methodPay"
-                      value="gopay"
+                      :value="{ akun: 'bca', nomor: '123321' }"
                       class="relative h-5 w-5 appearance-none rounded-full border-2 border-solid border-black bg-purple-700 before:pointer-events-none before:absolute before:h-4 before:w-4 before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] after:absolute after:z-[1] after:block after:h-4 after:w-4 after:rounded-full after:bg-white after:content-[''] checked:border-primary checked:bg-purple-900 checked:before:opacity-[0.16] checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:h-[0.625rem] checked:after:w-[0.625rem] checked:after:rounded-full checked:after:border-primary checked:after:bg-primary checked:after:content-[''] checked:after:[transform:translate(-50%,-50%)] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:transition-[border-color_0.2s] focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:border-primary checked:focus:bg-white checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s]"
                       type="radio"
                     >
@@ -67,17 +67,17 @@
             <div class="items-center pt-3 pb-3">
               <div class="px-5 cursor-pointer">
                 <div class="flex gap-4">
-                  <div class="border-solid border-2 rounded-lg">
-                    <img src="/SPAY.png" alt="">
+                  <div class="border-solid border-2 px-5 py-2 rounded-lg">
+                    <img src="/bank/bni.png" alt="">
                   </div>
                   <h1 class="text-lg font-semibold" style="color:rgba(68, 68, 68, 1)">
-                    ShopeePay
+                    Bank Negara Indonesia
                   </h1>
                   <div class=" absolute right-1/3 mb-[0.125rem] block min-h-[1.5rem] pl-[1.5rem]">
                     <input
                       id="radioDefault01"
                       v-model="methodPay"
-                      value="shopeepay"
+                      :value="{ akun: 'bni', nomor: '123321' }"
                       class="relative h-5 w-5 appearance-none rounded-full border-2 border-solid border-black bg-purple-700 before:pointer-events-none before:absolute before:h-4 before:w-4 before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] after:absolute after:z-[1] after:block after:h-4 after:w-4 after:rounded-full after:bg-white after:content-[''] checked:border-primary checked:bg-purple-900 checked:before:opacity-[0.16] checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:h-[0.625rem] checked:after:w-[0.625rem] checked:after:rounded-full checked:after:border-primary checked:after:bg-primary checked:after:content-[''] checked:after:[transform:translate(-50%,-50%)] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:transition-[border-color_0.2s] focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:border-primary checked:focus:bg-white checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s]"
                       type="radio"
                     >
@@ -89,17 +89,17 @@
             <div class="items-center pt-3 pb-3">
               <div class="px-5 cursor-pointer">
                 <div class="flex gap-4">
-                  <div class="border-solid border-2 rounded-lg">
-                    <img src="/OVO.png" alt="">
+                  <div class="border-solid border-2 px-5 py-2 rounded-lg">
+                    <img src="/bank/mandiri.png" alt="">
                   </div>
                   <h1 class="text-lg font-semibold" style="color:rgba(68, 68, 68, 1)">
-                    Ovo
+                    Bank Mandiri
                   </h1>
                   <div class=" absolute right-1/3 mb-[0.125rem] block min-h-[1.5rem] pl-[1.5rem]">
                     <input
                       id="radioDefault01"
                       v-model="methodPay"
-                      value="ovo"
+                      :value="{ akun: 'mandiri', nomor: '123321' }"
                       class="relative h-5 w-5 appearance-none rounded-full border-2 border-solid border-black bg-purple-700 before:pointer-events-none before:absolute before:h-4 before:w-4 before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] after:absolute after:z-[1] after:block after:h-4 after:w-4 after:rounded-full after:bg-white after:content-[''] checked:border-primary checked:bg-purple-900 checked:before:opacity-[0.16] checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:h-[0.625rem] checked:after:w-[0.625rem] checked:after:rounded-full checked:after:border-primary checked:after:bg-primary checked:after:content-[''] checked:after:[transform:translate(-50%,-50%)] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:transition-[border-color_0.2s] focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:border-primary checked:focus:bg-white checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s]"
                       type="radio"
                     >

@@ -24,7 +24,7 @@
             </div>
           </div>
         </div>
-        <loginPage :show-login="showLogin" @ok="google" @pp="daftar" />
+        <loginPage :show-login="showLogin" @ok="google" @pp="daftar" @close="showLogin =false" />
         <daftarPage :show-daftar="showDaftar" />
       </div>
     </div>

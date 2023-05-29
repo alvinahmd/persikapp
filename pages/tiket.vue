@@ -25,7 +25,7 @@
           >Riwayat</a>
         </div>
         <div class="container">
-          <div class="mb-80 flex flex-row py-2 px-2 rounded-t-xl bg-white shadow-lg" @click="showTiket =true">
+          <div class="mb-80 flex flex-row py-2 px-2 rounded-t-xl" @click="showTiket =true">
             <img src="/eticket(kecil).png" alt="">
             <div class="container p-2  bg-white shadow-md">
               <h1 class="text-lg font-bold" style="color:rgba(68, 68, 68, 1);">

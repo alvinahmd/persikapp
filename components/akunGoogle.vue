@@ -50,7 +50,7 @@
               </div>
               <div class="border b solid" />
               <div class="items-center pt-3 pb-3">
-                <div class="px-5 flex  flex-row">
+                <div class="px-5 flex  flex-row" @click="tambah">
                   <img src="/++.png" alt="">
                   <h1 class="text-md font-semibold pl-4 " style="color:rgba(68, 68, 68, 1)">
                     Tambah Akun Lain
@@ -77,6 +77,22 @@ export default {
     showGoogle: {
       type: Boolean,
       default: false
+    }
+  },
+  async tambah () {
+    try {
+      const res = await this.$axios.$post('/api/google',
+        {
+          nama: this.nama,
+          email: this.email,
+          password: this.password
+        })
+      this.$nuxt.$cookiz.set('name', res.data.user.name)
+      this.$nuxt.$cookiz.set('email', res.data.user.email)
+      this.$nuxt.$cookiz.set('token', res.data.access_token)
+      this.$router.replace('/')
+    } catch (error) {
+      alert(error.response.data.message)
     }
   }
 }

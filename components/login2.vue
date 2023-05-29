@@ -1,8 +1,9 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <div>
-    <div v-if="showLogin" class="fixed top[100%] left-0 flex justify-center items-end w-screen h-2/4">
+    <div v-if="showLogin" class="fixed top-[100%] left-0 flex justify-center items-end w-screen h-2/4">
       <div class="fixed top-0 left-0 w-screen h-screen duration-700" @click="$emit('close')" />
-      <div class="w-full max-w-screen-sm bg-white overflow-y-auto" style="z-index: 9999; height: calc(100vh - 50px)">
+      <div class="w-full max-w-screen-sm bg-white overflow-y-auto" style="z-index: 1; height: calc(100vh - 50px)">
         <div>
           <div class="container">
             <div class="mb-4 flex flex-row py-5 px-4 rounded-t-xl bg-white shadow-lg">
@@ -86,11 +87,11 @@
             </button>
             <p class="cursor-pointer text-center mb-3 text-base font-semibold text-gray-500 hover:text-gray-300 duration-500">
               Belum Punya Akun?
-              <span class="text-base font-semibold text-purple-900 hover:text-purple-500 duration-500" @click="dd">Buat Sekarang</span>
+              <span class="text-base font-semibold text-purple-900 hover:text-purple-700 duration-500 cursor-pointer" @click="dd">Buat Sekarang</span>
             </p>
           </div>
         </div>
-        <div class="h-40" />
+        <div class="h-80" />
       </div>
     </div>
   </div>
@@ -163,13 +164,12 @@ export default {
       await this.$fire.auth.signInWithPopup(provider).then((res) => {
         this.$cookiz.set('name', res.user.displayName)
         this.$cookiz.set('email', res.user.email)
+        this.$cookiz.set('photo', res.user.photoURL)
         this.$cookiz.set('token', res.credential.accessToken)
         this.$router.replace('/')
         this.$toast.success('Login Berhasil')
-        // eslint-disable-next-line no-console
         console.log('res', res)
       }).catch((e) => {
-        // eslint-disable-next-line no-console
         console.log('[g]', e)
       })
     }

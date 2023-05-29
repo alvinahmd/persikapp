@@ -26,13 +26,13 @@
         </div>
       </div>
     </div>
-    <div class="relative">
+    <div class="relative mb-8">
       <div
-        class="top-0 absolute h-full left-0 w-full bg-cover bg-center"
+        class="top-0 absolute h-full left-0 w-full bg-cover bg-center bg-transparent"
         :style="{ backgroundImage: `url(${require('~/static/11.png')})` }"
       />
-      <div class="flex items-center w-full p-4 pb-8 pt-14 rounded-lg bg-gradient-to-t from-purple-900 ">
-        <div class="z-1 mb-2 text-2xl absolute font-bold leading-tight text-white">
+      <div class="flex items-center w-full p-4 pb-8 pt-14 rounded-lg bg-gradient-to-t from-purple-900 space-y-8">
+        <div class="z-1 mb-2 text-2xl absolute font-bold leading-tight bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">
           <div>PSS Sleman</div>
           <div>VS Persik Kediri</div>
         </div>
@@ -59,13 +59,13 @@
         </div>
       </div>
     </div>
-    <div class="relative">
+    <div class="relative mb-8">
       <div
         class="top-0 absolute h-full left-0 w-full bg-cover bg-center"
         :style="{ backgroundImage: `url(${require('~/static/11.png')})` }"
       />
       <div class="flex items-center w-full p-4 pb-8 pt-14 rounded-lg bg-gradient-to-t from-purple-900 ">
-        <div class="z-1 mb-2 text-2xl absolute font-bold leading-tight text-white">
+        <div class="mb-2 text-2xl absolute font-bold bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">
           <div>PSS Sleman</div>
           <div>VS Persik Kediri</div>
         </div>
@@ -92,13 +92,13 @@
         </div>
       </div>
     </div>
-    <div class="relative">
+    <div class="relative mb-8">
       <div
         class="top-0 absolute h-full left-0 w-full bg-cover bg-center"
         :style="{ backgroundImage: `url(${require('~/static/11.png')})` }"
       />
       <div class="flex items-center w-full p-4 pb-8 pt-14 rounded-lg bg-gradient-to-t from-purple-900 ">
-        <div class="z-1 mb-2 text-2xl absolute font-bold leading-tight text-white">
+        <div class="z-1 mb-2 text-2xl absolute font-bold bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">
           <div>PSS Sleman</div>
           <div>VS Persik Kediri</div>
         </div>
@@ -130,7 +130,7 @@
         :style="{ backgroundImage: `url(${require('~/static/11.png')})` }"
       />
       <div class="flex items-center w-full p-4 pb-8 pt-14 rounded-lg bg-gradient-to-t from-purple-900 ">
-        <div class="z-1 mb-2 text-2xl absolute font-bold leading-tight text-white">
+        <div class="z-1 mb-2 text-2xl absolute font-bold bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">
           <div>PSS Sleman</div>
           <div>VS Persik Kediri</div>
         </div>

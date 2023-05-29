@@ -23,7 +23,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: '~/plugins/axios.js' }
+    { src: '~/plugins/axios.js' },
+    { src: '~/plugins/main.js', mode: 'client' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -39,7 +40,24 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    ['cookie-universal-nuxt', { alias: 'cookiz' }]
+    '@nuxtjs/toast',
+    ['cookie-universal-nuxt', { alias: 'cookiz' }],
+    ['@nuxtjs/firebase', {
+      config: {
+        apiKey: 'AIzaSyDN261hSpJFmW-03_WQdDl0VNk3yfxvTtM',
+        authDomain: 'persik-kediri-app.firebaseapp.com',
+        projectId: 'persik-kediri-app',
+        storageBucket: 'persik-kediri-app.appspot.com',
+        messagingSenderId: '697950951097',
+        appId: '1:697950951097:web:dcfe0dacb8930886e52d68',
+        measurementId: 'G-FP8VRDZ1T4'
+      },
+      services: {
+        auth: {
+          ssr: false
+        }
+      }
+    }]
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -68,5 +86,11 @@ export default {
         }
       }
     }
+  },
+  toast: {
+    position: 'top-right',
+    duration: 3000,
+    keepOnHover: true,
+    closeOnSwipe: true
   }
 }

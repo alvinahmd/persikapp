@@ -41,28 +41,6 @@
             </div>
             <div class="border b solid" />
             <div class="items-center pt-3 pb-3">
-              <div class="px-5 cursor-pointer" @click="showPutus = true">
-                <div class="flex gap-4">
-                  <img src="/dompet.png" alt="">
-                  <h1 class="text-lg font-semibold" style="color:rgba(68, 68, 68, 1)">
-                    Putuskan Dana
-                  </h1>
-                </div>
-              </div>
-            </div>
-            <div class="border b solid" />
-            <div class="items-center pt-3 pb-3">
-              <div class="px-5 cursor-pointer" @click="showBahasa = true">
-                <div class="flex gap-4">
-                  <img src="/bahasa.png" alt="">
-                  <h1 class="text-lg font-semibold" style="color:rgba(68, 68, 68, 1)">
-                    Pilih Bahasa
-                  </h1>
-                </div>
-              </div>
-            </div>
-            <div class="border b solid" />
-            <div class="items-center pt-3 pb-3">
               <div class="px-5">
                 <router-link to="/tentangkami">
                   <div class="flex gap-4">
@@ -102,9 +80,7 @@
       </div>
     </div>
     <ProfakunPage :show-akun="showAkun" @close="showAkun =false" />
-    <PilihBahasaa :show-bahasa="showBahasa" @close="showBahasa =false" />
     <UbahProfil :show-profil="ShowProfil" @close="ShowProfil =false" />
-    <PutuskanDana :show-putus="showPutus" @close="showPutus =false" />
     <keluarAkun :show-logout="showLogout" @close="showLogout =false" />
   </div>
 </template>

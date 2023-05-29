@@ -3,10 +3,10 @@
     <div v-if="showLogout" class="fixed top-0 left-0 flex justify-center items-end w-screen h-full">
       <div class="fixed top-0 left-0 w-screen h-screen duration-700" @click="$emit('close')" />
       <div class="w-full max-w-screen-sm max-h-screen" style="z-index: 1;">
-        <div>
-          <span class="flex justify-between bg-sky-300 rounded-full">
-            <a href="/profLogin" class=" cursor-pointer pl-3 text-2xl">X</a>
-          </span>
+        <div class="container">
+          <!-- <div class="w-10 h-10 bg-sky-300 rounded-full translate-x-96 flex cursor-pointer">
+            <a href="/profLogin" class="text-xl m-auto">X</a>
+          </div> -->
           <div class="relative p-4 w-full h-full justify-center">
             <div class="relative p-4 bg-white rounded-lg shadow-md">
               <div class="mb-4 text-sm font-light text-gray-500 dark:text-gray-400">
@@ -38,9 +38,16 @@ export default {
   },
 
   methods: {
-    logout () {
-      this.$nuxt.$cookiz.removeAll()
+    // logout () {
+    //   this.$nuxt.$cookiz.removeAll()
+    //   this.$router.replace('/')
+    // }
+    // eslint-disable-next-line require-await
+    async logout () {
+      this.$fire.auth.signOut()
       this.$router.replace('/')
+      this.$toast.success('Keluar Berhasil')
+      this.$cookiz.removeAll()
     }
   }
 }

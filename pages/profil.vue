@@ -37,15 +37,6 @@
             </div>
             <div class="border b solid" />
             <div class="items-center pt-3 pb-3">
-              <div class="px-5 flex gap-4 cursor-pointer" @click="showLogin = false, bahasaShow = true ">
-                <img src="/bahasa.png" alt="">
-                <h1 class="text-lg font-semibold" style="color:rgba(68, 68, 68, 1)">
-                  Pilih Bahasa
-                </h1>
-              </div>
-            </div>
-            <div class="border b solid" />
-            <div class="items-center pt-3 pb-3">
               <div class="px-5 flex gap-4">
                 <img src="/tentang.png" alt="">
                 <a href="/tentangkami">
@@ -67,7 +58,7 @@
               </div>
             </div>
             <div class="border b solid" />
-            <div class="cursor-pointer flex flex-row justify-between items-center pt-3 pb-3" @click="showPutus = true ">
+            <div class="cursor-pointer flex flex-row justify-between items-center pt-3 pb-3" @click="showLogin = true ">
               <div class="px-5">
                 <h1 class="text-lg font-semibold text-red-500">
                   Keluar
@@ -85,9 +76,8 @@
     <resetPage :show-reset="resetShow" @close="resetShow =false" />
     <GantiPass :show-ganti="showGanti" />
     <profakunPage :show-akun="showAkun" />
-    <PilihBahasaa :show-bahasa="bahasaShow" @close="bahasaShow =false" />
-    <belumPunyakun :show-putus="showPutus" @close="showPutus =false" />
-    <loginPage @close="showLogin =false" :show-login="showLogin" @ok="google" @pp="daftar" @rs="reset" />
+    <keluarAkun :show-logout="showLogout" @close="showLogout =false" />
+    <loginPage :show-login="showLogin" @close="showLogin =false" @ok="google" @pp="daftar" @rs="reset" />
   </div>
 </template>
 
@@ -101,7 +91,8 @@ export default {
       bahasaShow: false,
       showPutus: false,
       resetShow: false,
-      showDaftar: false
+      showDaftar: false,
+      showLogout: false
     }
   },
   beforeCreate () {

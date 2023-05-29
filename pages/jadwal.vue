@@ -22,16 +22,16 @@
             <div class=" flex flex-row justify-around">
               <div class="py-5">
                 <div>
-                  <span>{{ jadwal.tuan_rumah.path }}</span>
+                  <img :src="$axios.defaults.baseURL+'/'+jadwal.tuan_rumah.image" :alt="jadwal.tuan_rumah.image" class="w-12 h-12">
                 </div>
-                <span class="text-md font-bold" style="color:rgba(68, 68, 68, 1)">{{ jadwal.tuan_rumah.nama }}</span>
+                <span class="text-center text-md font-bold" style="color:rgba(68, 68, 68, 1)">{{ jadwal.tuan_rumah.nama }}</span>
               </div>
               <span class="flex items-center text-xl font-bold">VS</span>
               <div class="py-5">
                 <div>
-                  <span>{{ jadwal.penantang.path }}</span>
+                  <img :src="$axios.defaults.baseURL+'/'+jadwal.penantang.image" :alt="jadwal.penantang.image" class="w-12 h-12">
                 </div>
-                <span class="text-md font-bold" style="color:rgba(68, 68, 68, 1)">{{ jadwal.penantang.nama }}</span>
+                <span class=" text-center text-md font-bold" style="color:rgba(68, 68, 68, 1)">{{ jadwal.penantang.nama }}</span>
               </div>
             </div>
           </div>
@@ -46,7 +46,7 @@ export default {
     return {
       persik: null,
       tanggal: null,
-      path: null,
+      image: null,
       nama: null
     }
   },

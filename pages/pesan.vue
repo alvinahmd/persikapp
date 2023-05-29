@@ -26,8 +26,8 @@
                   </svg>
                 </span>
                 <div class="pl-5">
-                  <strong class="text-lg" style="color:rgba(68, 68, 68, 1)">Customers Service</strong>
-                  <span class="text-md" style="color:rgba(153, 144, 144, 1)">Hubungi Kami Jika Anda Butuh Bantuan</span>
+                  <div class="text-lg" style="color:rgba(68, 68, 68, 1)">Customers Service</div>
+                  <div class="text-md" style="color:rgba(153, 144, 144, 1)">Hubungi Kami Jika Anda Butuh Bantuan</div>
                 </div>
               </div>
             </div>
@@ -37,8 +37,8 @@
                   <img src="/percik.png" alt="">
                 </span>
                 <div class="pl-5">
-                  <strong class="text-lg" style="color:rgba(68, 68, 68, 1)">Persikmania</strong>
-                  <span class="text-md " style="color:rgba(153, 144, 144, 1)">****** mengundang anda</span>
+                  <div class="text-lg" style="color:rgba(68, 68, 68, 1)">Persikmania</div>
+                  <div class="text-md " style="color:rgba(153, 144, 144, 1)">****** mengundang anda</div>
                 </div>
               </div>
               <div class="border b solid" />
@@ -46,26 +46,26 @@
           </div>
         </div>
         <div class="w-full bg-purple-900 py-4 ">
-          <nav>
-            <ul class="flex justify-between items-center  px-5">
-              <li class="nav-item">
-                <router-link to="/" class="nav-link">
-                  <img src="/home1.png" alt="" class="w-7 h-7">
+          <div>
+            <ul class="flex justify-between px-14 items-center">
+              <li>
+                <router-link to="/">
+                  <img src="/home1.png" alt="">
                 </router-link>
               </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <img src="/pesan2.png" alt="" class="w-full">
-                  <span class="font-semibold text-base text-white">Pesan</span>
+              <li class="text-white">
+                <a href="">
+                <img src="/pesan2.png">
+                  <span class="text-white">Pesan</span>
                 </a>
               </li>
-              <li class="nav-item">
-                <router-link to="/" class="nav-link">
-                  <img src="/tiket1.png" alt="" class="w-full">
-                </router-link>
+              <li>
+              <router-link to="/tiket">
+              <img src="/tiket1.png" alt="">
+              </router-link>
               </li>
             </ul>
-          </nav>
+          </div>
         </div>
       </div>
     </div>
