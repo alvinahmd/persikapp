@@ -43,7 +43,6 @@
             <div class="border-t-4" />
           </div>
         </div>
-        <!--jumlah tiket-->
         <div class="flex">
           <h1 class="font-bold text-2xl mb-8 px-8 pt-5" style="color:rgba(50, 11, 78, 1);">
             Jumlah Tiket
@@ -97,7 +96,7 @@
     </div>
   </div>
 </template>
-<!-- <script>
+<script>
 export default {
   props: {
     showTiket: {

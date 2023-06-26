@@ -92,6 +92,8 @@ export default {
       showPutus: false,
       resetShow: false,
       showDaftar: false,
+      showGanti: false,
+      showAkun: false,
       showLogout: false
     }
   },

@@ -146,6 +146,7 @@ export default {
       resetShow: false,
       showDaftar: false,
       showKeranjang: false,
+      showGanti: false,
       persik: null,
       nama: null,
       tanggal: null,
