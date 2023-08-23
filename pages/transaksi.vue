@@ -115,12 +115,12 @@
             </div>
             <div class="border-b border-slate-500" />
           </div>
+          <button class="w-60 px-2 py-2 rounded-lg border text-white  " @click="berhasil">
+            Konfirmasi
+          </button>
         </div>
       </div>
     </div>
-    <button @click="berhasil">
-      Konfirmasi
-    </button>
   </div>
 </template>
 <script>

@@ -23,7 +23,7 @@
               <div class="py-2">
                 <img :src="$axios.defaults.baseURL+'/'+team.url_logo" :alt="team.url_logo" class="">
               </div>
-              <span class="text-lg text-white" style="background-color:rgba(115, 101, 124, 1);">
+              <span class="text-lg text-white w-6 px-2" style="background-color:rgba(115, 101, 124, 1);">
                 {{ team.posisi_pemain }}
               </span>
             </div>

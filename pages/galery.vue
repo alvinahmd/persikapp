@@ -170,7 +170,7 @@ export default {
       try {
         await this.$axios.$get('/api/galery_pertandingan', {
           params: {
-            nama: this.cari
+            q: this.cari
           },
           headers: { 'ngrok-skip-browser-warning': '123123' }
         })

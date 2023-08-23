@@ -60,7 +60,7 @@
                 </a>
               </li>
               <li>
-              <router-link to="/tiket">
+              <router-link to="/riwayat">
               <img src="/tiket1.png" alt="">
               </router-link>
               </li>

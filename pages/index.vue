@@ -175,9 +175,9 @@ export default {
       // this.getData()
       // console.log('nama', this.cari)
       try {
-        await this.$axios.$get('/api/tiket/search', {
+        await this.$axios.$get('/api/tiket', {
           params: {
-            nama: this.cari
+            q: this.cari
           },
           headers: { 'ngrok-skip-browser-warning': '123123' }
         })
@@ -192,7 +192,7 @@ export default {
       try {
         await this.$axios.$get('/api/tiket', {
           params: {
-            nama: this.cari
+            q: this.cari
           },
           headers: { 'ngrok-skip-browser-warning': '123123' }
         })
