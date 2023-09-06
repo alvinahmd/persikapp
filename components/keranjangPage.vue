@@ -11,6 +11,9 @@
                   <path d="M11 2L3 11.1042L11 21" stroke="#320B4E" stroke-width="4" stroke-linecap="round" />
                 </svg>
               </router-link>
+              <div class="pl-4">
+                <img src="pskicon.png" alt="" class="w-[45px] h-[45px]">
+              </div>
               <h1 class="font-bold text-2xl mx-auto" style="color:rgba(50, 11, 78, 1);">
                 Keranjang
               </h1>

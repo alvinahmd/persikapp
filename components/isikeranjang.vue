@@ -64,7 +64,7 @@
     </div>
     <div class="flex flex-row justify-between pt-28 px-6 absolute right-1/3">
       <h1 class="font-medium text-gray-600">
-        tersisa 189 tiket
+        tersisa 0 tiket
       </h1>
     </div>
   </div>

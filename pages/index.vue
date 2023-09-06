@@ -4,6 +4,9 @@
       <div class="container bg-white shadow-md">
         <!-- pencarian -->
         <div class="relative flex flex-row py-5 px-4 bg-white shadow-lg">
+          <div class="pr-4">
+            <img src="pskicon.png" alt="" class="w-[45px] h-[45px]">
+          </div>
           <input
             v-model="cari"
             type="search"
@@ -81,9 +84,11 @@
                 <div class="absolute top-0 right-0 bottom-0 left-0 h-full w-full  bg-fixed">
                   <div class="flex">
                     <div>
-                      <!-- <span class="mb-4 font-semibold text-black bg-white rounded-full px-3 py-2 text-center">
-                        Tanpa Penonton
-                      </span> -->
+                      <div class="pt-4">
+                        <span class="mb-4 font-semibold text-white bg-blue-400 rounded-full px-3 py-2 text-center">
+                          Tersedia
+                        </span>
+                      </div>
                       <div class=" text-white pt-4">
                         <h5 class="inter font-bold mt-5 pl-4 text-4xl">
                           {{ tiket.tuan_rumah.nama }}
